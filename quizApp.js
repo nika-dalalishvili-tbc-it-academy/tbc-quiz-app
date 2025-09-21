@@ -54,6 +54,7 @@ function startTimer() {
         updateTimer();
         if (timeLeft <= 0) {
             clearInterval(timerInterval);
+            finishQuiz();
         }
     }, 1000);
 }
@@ -63,3 +64,36 @@ function updateTimer() {
     const seconds = String(timeLeft % 60).padStart(2, "0");
     timer.textContent = `Time: ${minutes}:${seconds}`;
 }
+
+function finishQuiz() {
+    clearInterval(timerInterval);
+    quiz.classList.remove("active");
+    results.classList.add("active");
+    checkAnswers();
+}
+
+function checkAnswers() {
+    resultDetails.innerHTML = "";
+    const formData = new FormData(quizForm);
+    currentTopic.questions.forEach(({ question, answers, correct}, qi) => {
+        const chosen = formData.get(`q${qi}`);
+        const div = document.createElement("div");
+        div.innerHTML = `<p><strong>${qi + 1}. ${question}</strong></p>`;
+        answers.forEach((answer, ai) => {
+            const p = document.createElement("p");
+            p.textContent = answer;
+            if (ai === correct) {
+                p.classList.add("correct");
+                p.textContent += " ✅";
+            }
+            if (chosen == ai && ai !== correct) {
+                p.classList.add("incorrect");
+                p.textContent += " ❌";
+            }
+            div.appendChild(p);
+        });
+        resultDetails.appendChild(div);
+    })
+}
+
+submitBtn.addEventListener("click", finishQuiz);
