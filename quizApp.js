@@ -26,6 +26,7 @@ function startQuiz(topicIndex) {
     menu.classList.remove("active");
     quiz.classList.add("active");
     renderQuestions();
+    startTimer();
 }
 
 function renderQuestions() {
@@ -44,4 +45,21 @@ function renderQuestions() {
         div.appendChild(answersDiv);
         quizForm.appendChild(div);
     });
+}
+
+function startTimer() {
+    updateTimer();
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
+function updateTimer() {
+    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
+    const seconds = String(timeLeft % 60).padStart(2, "0");
+    timer.textContent = `Time: ${minutes}:${seconds}`;
 }
