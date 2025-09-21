@@ -11,72 +11,22 @@
         <h1>TBC Quiz App</h1>
 
         <!-- Menu -->
-        <div class="menu" id="menu">
+        <div class="menu active" id="menu">
             <h2>Select a Topic</h2>
-            <div id="topics">
-                <button class="topic-btn">Git - Getting Started</button>
-                <button class="topic-btn">Git - Fundamentals</button>
-                <button class="topic-btn">Git - Branching</button>
-            </div>
+            <div id="topics"></div>
         </div>
 
         <!-- Quiz -->
         <div class="quiz" id="quiz">
             <div class="timer" id="timer">Time: 03:00</div>
-            <form id="quizForm">
-                <div class="question">
-                    <p>
-                        <strong>1. What is Version Control System?</strong>
-                    </p>
-                    <div class="answers">
-                        <label>
-                            <input type="radio" name="q0" value="0">
-                            Software to facilitate working with different states of the same document.
-                        </label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>
-                        <strong>
-                            2. Does Version Control System allow getting information about the user who made changes to the repository?
-                        </strong>
-                    </p>
-                    <div class="answers">
-                        <label>
-                            <input type="radio" name="q1" value="0">
-                            No
-                        </label>
-                    </div>
-                </div>
-            </form>
+            <form id="quizForm"></form>
             <button class="submit-btn" id="submitBtn" type="button">Submit</button>
         </div>
 
         <!-- Results -->
-        <div class="results active" id="results">
+        <div class="results" id="results">
             <h2>Results</h2>
-            <div class="resultDetails">
-                <div>
-                    <p>
-                        <strong>
-                            1. What is Version Control System?
-                        </strong>
-                    </p>
-                    <p class="correct">Software to facilitate working with different states of the same document.</p>
-                    <p class="incorrect">Special equipment that allows you to securely store important information. </p>
-                    <p>Special equipment that allows you to securely store important information. </p>
-                </div>
-                <div>
-                    <p>
-                        <strong>
-                            2. Does Version Control System allow getting information about the user who made changes to the repository?
-                        </strong>
-                    </p>
-                    <p class="correct">No</p>
-                    <p class="incorrect">Yes</p>
-                    <p>Both</p>
-                </div>
-            </div>
+            <div class="resultDetails"></div>
         </div>
     </div>
 </body>
