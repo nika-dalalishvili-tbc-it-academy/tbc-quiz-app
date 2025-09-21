@@ -11,13 +11,45 @@
         <h1>TBC Quiz App</h1>
 
         <!-- Menu -->
-        <div class="menu active" id="menu">
+        <div class="menu" id="menu">
             <h2>Select a Topic</h2>
             <div id="topics">
                 <button class="topic-btn">Git - Getting Started</button>
                 <button class="topic-btn">Git - Fundamentals</button>
                 <button class="topic-btn">Git - Branching</button>
             </div>
+        </div>
+
+        <!-- Quiz -->
+        <div class="quiz active" id="quiz">
+            <div class="timer" id="timer">Time: 03:00</div>
+            <form id="quizForm">
+                <div class="question">
+                    <p>
+                        <strong>1. What is Version Control System?</strong>
+                    </p>
+                    <div class="answers">
+                        <label>
+                            <input type="radio" name="q0" value="0">
+                            Software to facilitate working with different states of the same document.
+                        </label>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>
+                        <strong>
+                            2. Does Version Control System allow getting information about the user who made changes to the repository?
+                        </strong>
+                    </p>
+                    <div class="answers">
+                        <label>
+                            <input type="radio" name="q1" value="0">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </form>
+            <button class="submit-btn" id="submitBtn" type="button">Submit</button>
         </div>
     </div>
 </body>
