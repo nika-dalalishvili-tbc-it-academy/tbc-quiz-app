@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>TBC Quiz App</h1>
+        <header id="quizHeader">TBC Quiz App (Frontend Development 2025-2026)</header>
 
         <!-- Menu -->
         <div class="menu active" id="menu">
@@ -26,7 +26,18 @@
         <!-- Results -->
         <div class="results" id="results">
             <h2>Results</h2>
+            <div class="quiz-results" id="quizResults"></div>
             <div id="resultDetails"></div>
+            <button class="restart-btn" id="restartBtn">Restart</button>
+        </div>
+
+        <!-- Modal Popup -->
+        <div class="modal" id="resultModal">
+            <div class="modal-content">
+                <h3>Quiz Completed</h3>
+                <div id="modalSummary"></div>
+                <button id="closeModal">Close</button>
+            </div>
         </div>
     </div>
     
